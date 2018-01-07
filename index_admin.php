@@ -143,9 +143,9 @@ include "inc/koneksi.php";
 
   } else if($page == "laporan"){
     if($action == ""){
-      include "admin/laporan_kunjungan.php";
+      include "laporan/laporan_kunjungan.php";
     } else if($action == "laporan_pasien"){
-      include "admin/laporan_pasien.php";
+      include "laporan/laporan_pasien.php";
     }
 
   } else if($page == "user"){

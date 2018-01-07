@@ -50,15 +50,6 @@ if(isset($_POST['cari_laporan'])){
 						$query = mysql_query("select * from tbl_kunjungan where tgl_kunjung between '$tgl_awal' and '$tgl_akhir'");
 					}?>
 
-					<div style="margin-bottom: 15px;" align="right">
-						<form action="" method="post">
-							<input type="text" name="inputan_pencarian" placeholder="Masukkan Kode Pasien.." style="width: 200px; padding: 5px;" />
-							<input type="submit" name="cari_kunjungan" value="Cari" style="padding: 3px" />
-							
-						</form>
-						
-					</div>
-
 
 					<table id="dynamic-table" class="table table-striped table-bordered table-hover">
 						<thead>
@@ -86,18 +77,6 @@ if(isset($_POST['cari_laporan'])){
 						$sql = mysql_query("select * from tbl_kunjungan LIMIT $posisi, $batas") or die (mysql_error());
 						$no = $posisi + 1;
 
-						$inputan_pencarian = @$_POST['inputan_pencarian'];
-						$cari_kunjungan = @$_POST['cari_kunjungan'];
-
-						if($cari_kunjungan){
-							if($inputan_pencarian != ""){
-								$sql = mysql_query("select * from tbl_kunjungan where kode_kunjung like '%$inputan_pencarian%'") or die(mysql_error());
-							} else {
-								$sql = mysql_query("select * from tbl_kunjungan") or die(mysql_error());
-							}
-						} else {
-							$sql = mysql_query("select * from tbl_kunjungan") or die(mysql_error());
-						}
 
 						$cek = mysql_num_rows($sql);
 						if($cek < 1){

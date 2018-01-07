@@ -2,6 +2,7 @@
 <div class="row">
 <div class="col-md-12">
 <?php
+include "inc/koneksi.php";
 
 //untuk menentukan tanggal awal dan tanggal akhir data di database
 $min_tanggal = mysql_fetch_array(mysql_query("select min(tgl_msk) as min_tgl from tbl_pasien"));
@@ -132,8 +133,10 @@ if(isset($_POST['cari_laporan'])){
 		                }
 		                ?> 
 					</table>
-					<hr><a href="laporan/cetak_pasien.php?tgl_awal=<?=$tgl_awal?>&tgl_akhir=<?=$tgl_akhir?>" target="_blank" class="btn btn-success"><span class="glyphicon glyphicon-print"></span>Cetak</a></hr>
-						<div style="margin-top: 10px; float: left;">
+					">
+					<hr><a href="laporan/cetak_pasien.php?tgl_awal=<?=$tgl_awal?>&tgl_akhir=<?=$tgl_akhir?>" target="_blank" class="btn btn-success"><span class="glyphicon glyphicon-print"></span> Cetak </a></hr>
+					<div style="margin-top: 10px; float: left;
+						
 
 						</div>
 					</div>

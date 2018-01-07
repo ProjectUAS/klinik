@@ -58,7 +58,7 @@ include "inc/koneksi.php"; ?>
 		        </li>
 
 		        <li><a href="?page=registrasi">Registrasi Online</a></li>
-		        <li><a href="page=hubungi_kami">Hubungi Kami</a></li>
+		        <li><a href="?page=hubungi_kami">Hubungi Kami</a></li>
 		    </ul>
 		    </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->

@@ -13,13 +13,13 @@
 
 			echo '<form class="form-horizontal" action="?page=registrasi" method="post" role="form">';
 			echo '<div class="form-group">';
-			echo '<label for="kode_pasien" class="control-label col-sm-3"> No. Rekam Medis</label>';
+			echo '<label for="no_rm" class="control-label col-sm-3"> No. Rekam Medis</label>';
 			echo '<div class="col-sm-8">';
-			echo '<select class="form-control" name="kode_pasien" id="kode_pasien" onchange="changeValue(this.value)">';
+			echo '<select class="form-control" name="no_rm" id="no_rm" onchange="changeValue(this.value)">';
 			echo '<option>-- Pilih No. Rekam Medis --</option>';
 			while ($row = mysql_fetch_array($result)) {
-				echo '<option value="' . $row['kode_pasien'] . '">' . $row['kode_pasien'] . '</option>';
-				$jsArray .= "prdName['" . $row['kode_pasien'] . "'] = {nama_pasien:'".addslashes($row['nama_pasien'])."'};\n";
+				echo '<option value="' . $row['no_rm'] . '">' . $row['no_rm'] . '</option>';
+				$jsArray .= "prdName['" . $row['no_rm'] . "'] = {nama_pasien:'".addslashes($row['nama_pasien'])."'};\n";
 			}
 			echo '</select>';
 			echo '</div>';
@@ -78,7 +78,7 @@
   	</form>
 
   	<?php
-  	$kode_pasien = @$_POST['kode_pasien'];
+  	$no_rm = @$_POST['no_rm'];
 	$nama_pasien = @$_POST['nama_pasien'];
 	$nama_dokter = @$_POST['nama_dokter'];
 	$tgl_kunjung = @$_POST['tgl_kunjung'];
@@ -89,7 +89,7 @@
 	$registrasi_online = @$_POST['daftar'];
 
 	if($registrasi_online) {
-		if($kode_pasien == "" || $nama_pasien == "" || $nama_dokter == "" || $tgl_kunjung == "" || $jam_kunjung == "" ){
+		if($no_rm == "" || $nama_pasien == "" || $nama_dokter == "" || $tgl_kunjung == "" || $jam_kunjung == "" ){
 
 			?>
 			<script type="text/javascript">
@@ -98,7 +98,7 @@
 			<?php
 
 		} else {
-			mysql_query("insert into tbl_registrasi values('$kode_pasien', '$nama_pasien', '$nama_dokter', '$tgl_kunjung', '$jam_kunjung')") or die (mysql_error());
+			mysql_query("insert into tbl_registrasi values('$no_rm', '$nama_pasien', '$nama_dokter', '$tgl_kunjung', '$jam_kunjung')") or die (mysql_error());
 			?>
 			<script type="text/javascript">
 				alert("Registrasi Berhasil !");

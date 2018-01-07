@@ -63,14 +63,14 @@
   		<div class="form-group">
   			<label for="tgl_kunjung" class="control-label col-sm-3">Tanggal Kunjungan</label>
   			<div class="col-sm-8">
-  			<input type="text" name="tgl_kunjung" id="tgl_kunjung" class="form-control" value="<?php echo date ("Y-m-d") ?>" />
+  			<input type="date" name="tgl_kunjung" id="tgl_kunjung" class="form-control" value="<?php echo date ("Y-m-d") ?>" />
   			</div>	
   		</div>
 
   		<div class="form-group">
   			<label for="jam_kunjung" class="control-label col-sm-3">Jam Kunjungan</label>
   			<div class="col-sm-8">
-  			<input type="text" name="jam_kunjung" id="jam_kunjung" class="form-control" value="<?php echo date ("h : i : sa") ?>" />
+  			<input type="time" name="jam_kunjung" id="jam_kunjung" class="form-control" value="<?php echo date ("h : i : sa") ?>" />
   			</div>	
   		</div>
 

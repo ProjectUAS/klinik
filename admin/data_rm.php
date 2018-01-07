@@ -70,7 +70,7 @@
 
 			<tr>
 					<td align="center"><?php echo $no++."."; ?></td>
-					<td align="center"><?php echo $data['kd_rm']; ?></td>
+					<td align="center"><?php echo $data['no_rm']; ?></td>
 					<td align="center"><?php echo $data['tgl_periksa']; ?></td>
 					<td align="center"><?php echo $data['nama_dokter']; ?></td>
 					<td align="center"><?php echo $data['keluhan']; ?></td>
